@@ -3,4 +3,5 @@
     <string name="app_name">Android LAbs</string>
     <string name="hello_message">Hello !</string>
     <string name="ButtonText">I\’m a button</string>
+    <string name = "hint_name">Type here</string>
 </resources>

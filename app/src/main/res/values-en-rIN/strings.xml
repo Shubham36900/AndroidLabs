@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name = "hello_message">Hello indians!</string>
+    <string name = "toast_message">here is some more information from india</string>
+    <string name = "hint_name">Type here</string>
 </resources>
