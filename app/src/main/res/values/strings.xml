@@ -4,4 +4,6 @@
     <string name="ButtonText">I\’m a button</string>
     <string name = "toast_message">Here is more information</string>
      <string name = "hint_name">Type here</string>
+    <string name = "click_here">Click here</string>
+    <string name ="check_name">Check this out</string>
 </resources>

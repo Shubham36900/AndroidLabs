@@ -44,6 +44,22 @@ public class MainActivity extends AppCompatActivity {
 
 
             });
+        cb.setOnCheckedChangeListener( (compoundButton , b) -> {
+
+            String message;
+            if(b==true) {
+                //  Toast.makeText(MainActivity.this, "Checkbox is " + b, Toast.LENGTH_LONG).show();
+                Snackbar.make(theEdit, "The switch is now ON  " , Snackbar.LENGTH_LONG)
+                        .setAction("Undo", click-> compoundButton.setChecked( !b ))
+                        .show();
+
+            }else
+                Snackbar.make(theEdit, "The switch is now Off  " , Snackbar.LENGTH_LONG)
+                        .setAction("Undo", click-> compoundButton.setChecked( !b ))
+                        .show();
+
+
+        });
 
     }
 }

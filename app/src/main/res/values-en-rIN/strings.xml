@@ -3,4 +3,6 @@
     <string name = "hello_message">Hello indians!</string>
     <string name = "toast_message">here is some more information from india</string>
     <string name = "hint_name">Type here</string>
+    <string name = "click_here">Click here</string>
+    <string name ="check_name">Check this out</string>
 </resources>
