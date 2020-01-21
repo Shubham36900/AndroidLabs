@@ -20,12 +20,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_main_grid);
+        setContentView(R.layout.activity_main_linear);
 
         EditText theEdit = findViewById(R.id.edit);
         CheckBox cb = findViewById(R.id.checkBox);
+        Button btn = findViewById(R.id.button2);
         Switch swtch = findViewById(R.id.switchbtn);
-        cb.setOnClickListener( cd -> {
+        btn.setOnClickListener( cd -> {
             Toast.makeText(MainActivity.this, getResources().getString(R.string.toast_message) , Toast.LENGTH_LONG).show();
         });
         swtch.setOnCheckedChangeListener( (compoundButton , b) -> {
