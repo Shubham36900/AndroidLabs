@@ -1,10 +1,9 @@
 package com.example.androidlabs;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,52 +14,46 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+    SharedPreferences share = null;
+    EditText type ;
+    @Override
+    protected void onPause() {
+        super.onPause();
+        saveSharedPrefs(type.getText().toString());
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_main_linear);
+        setContentView(R.layout.activity_login);
+       // setContentView(R.layout.activity_main);
 
-        EditText theEdit = findViewById(R.id.edit);
-        CheckBox cb = findViewById(R.id.checkBox);
-        Button btn = findViewById(R.id.button2);
-        Switch swtch = findViewById(R.id.switchbtn);
-        btn.setOnClickListener( cd -> {
-            Toast.makeText(MainActivity.this, getResources().getString(R.string.toast_message) , Toast.LENGTH_LONG).show();
-        });
-        swtch.setOnCheckedChangeListener( (compoundButton , b) -> {
-
-               String message;
-                if(b==true) {
-                    //  Toast.makeText(MainActivity.this, "Checkbox is " + b, Toast.LENGTH_LONG).show();
-                    Snackbar.make(theEdit, "The switch is now ON  " , Snackbar.LENGTH_LONG)
-                     .setAction("Undo", click-> compoundButton.setChecked( !b ))
-                            .show();
-
-                }else
-                    Snackbar.make(theEdit, "The switch is now Off  " , Snackbar.LENGTH_LONG)
-                            .setAction("Undo", click-> compoundButton.setChecked( !b ))
-                            .show();
+        share = getSharedPreferences("file",MODE_PRIVATE);
+        String saved = share.getString("Reserve name", "");
+         type = findViewById(R.id.edit);
+        type.setText(saved);
 
 
-            });
-        cb.setOnCheckedChangeListener( (compoundButton , b) -> {
+        Button login = findViewById(R.id.login);
+        //login.setOnClickListener(click -> saveSharedPrefs(type.getText().toString()));
+    login.setOnClickListener(click ->{
+        Intent goToProfile = new Intent(MainActivity.this, ProfileActivity.class);
 
-            String message;
-            if(b==true) {
-                //  Toast.makeText(MainActivity.this, "Checkbox is " + b, Toast.LENGTH_LONG).show();
-                Snackbar.make(theEdit, "The switch is now ON  " , Snackbar.LENGTH_LONG)
-                        .setAction("Undo", click-> compoundButton.setChecked( !b ))
-                        .show();
+       // saveSharedPrefs(type.getText().toString());
 
-            }else
-                Snackbar.make(theEdit, "The switch is now Off  " , Snackbar.LENGTH_LONG)
-                        .setAction("Undo", click-> compoundButton.setChecked( !b ))
-                        .show();
+      goToProfile.putExtra("E-mail",type.getText().toString());
+          startActivity ( goToProfile );
 
-
-        });
+    });
 
     }
-}
+
+
+    private void saveSharedPrefs(String save)
+    {
+        SharedPreferences.Editor editor = share.edit();
+        editor.putString("Reserve name", save);
+        editor.commit();
+    }
+    }

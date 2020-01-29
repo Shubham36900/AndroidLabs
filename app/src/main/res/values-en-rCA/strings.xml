@@ -6,4 +6,9 @@
     <string name = "hint_name">Type here</string>
     <string name = "click_here">Click here</string>
     <string name ="check_name">Check this out</string>
+    <string name ="Profile">Canadian Profile</string>
+    <string name ="email">Enter your Canadian Email Address</string>
+    <string name ="here">Type your Canadian Email</string>
+    <string name ="pass">Type your Canadian password</string>
+
 </resources>
