@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android LAbs</string>
+    <string name="hello_message">Hello !</string>
+    <string name="ButtonText">I\’m a button</string>
+    <string name = "hint_name">Type here</string>
+    <string name = "click_here">Click here</string>
+    <string name ="check_name">Check this out</string>
+    <string name ="Profile">Profile</string>
+    <string name ="email">Enter your  Email Address</string>
+    <string name ="here">Type your  Email</string>
+    <string name ="pass">Type your C password</string>
+</resources>
