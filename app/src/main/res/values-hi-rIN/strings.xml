@@ -3,11 +3,11 @@
     <string name="app_name">Android एलएबी</string>
     <string name="hello_message">नमस्ते दुनिया!</string>
     <string name="ButtonText">I\’m a button</string>
-    <string name = "hint_name">Type here</string>
-    <string name = "click_here">Click here</string>
-    <string name ="check_name">Check this out</string>
+    <string name = "hint_name">Type here in hindi</string>
+    <string name = "click_here">Click here in hindi</string>
+    <string name ="check_name">Check this out in hindi</string>
     <string name ="Profile">्रोफ़ाइल</string>
     <string name ="email">अपना ईमेल पता दर्ज करें</string>
-    <string name ="here">Type your  Email</string>
+    <string name ="here">Type your  hindi Email</string>
     <string name ="pass">अपना पासवर्ड टाइप करें</string>
 </resources>
