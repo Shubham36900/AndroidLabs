@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity {
     SharedPreferences share = null;
     EditText type ;
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -36,17 +37,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button login = findViewById(R.id.login);
-        //login.setOnClickListener(click -> saveSharedPrefs(type.getText().toString()));
+        Button chats = findViewById(R.id.chat);
     login.setOnClickListener(click ->{
         Intent goToProfile = new Intent(MainActivity.this, ProfileActivity.class);
 
-       // saveSharedPrefs(type.getText().toString());
 
       goToProfile.putExtra("E-mail",type.getText().toString());
           startActivity ( goToProfile );
 
     });
 
+         chats.setOnClickListener(clik -> {
+             Intent lab4 = new Intent(MainActivity.this, ChatRoomActivity.class);
+             startActivity (lab4);
+         });
     }
 
 

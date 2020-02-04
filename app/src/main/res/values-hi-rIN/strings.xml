@@ -10,4 +10,8 @@
     <string name ="email">अपना ईमेल पता दर्ज करें</string>
     <string name ="here">Type your  hindi Email</string>
     <string name ="pass">अपना पासवर्ड टाइप करें</string>
+    <string name="chats">चैट पर जाएं</string>
+    <string name ="send">भेजने</string>
+    <string name ="receive">
+प्राप्त करना </string>
 </resources>
