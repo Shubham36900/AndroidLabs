@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button login = findViewById(R.id.login);
-        Button chats = findViewById(R.id.chat);
+       // Button chats = findViewById(R.id.chat);
     login.setOnClickListener(click ->{
         Intent goToProfile = new Intent(MainActivity.this, ProfileActivity.class);
 
@@ -47,10 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     });
 
-         chats.setOnClickListener(clik -> {
-             Intent lab4 = new Intent(MainActivity.this, ChatRoomActivity.class);
-             startActivity (lab4);
-         });
+
     }
 
 

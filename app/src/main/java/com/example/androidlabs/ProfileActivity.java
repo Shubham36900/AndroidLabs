@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -37,7 +38,13 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
+        Button chats = findViewById(R.id.chat);
+        chats.setOnClickListener(clik -> {
+            Intent lab4 = new Intent(ProfileActivity.this, ChatRoomActivity.class);
+            startActivity (lab4);
+        });
         Log.e(ACTIVITY_NAME,"In function : OnCreates()") ;
+
     }
 
 
