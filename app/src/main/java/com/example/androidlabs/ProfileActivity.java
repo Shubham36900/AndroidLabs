@@ -43,6 +43,11 @@ public class ProfileActivity extends AppCompatActivity {
             Intent lab4 = new Intent(ProfileActivity.this, ChatRoomActivity.class);
             startActivity (lab4);
         });
+        Button weather = findViewById(R.id.weather);
+        weather.setOnClickListener(clik -> {
+            Intent lab6 = new Intent(ProfileActivity.this, WeatherForecast.class);
+            startActivity (lab6);
+        });
         Log.e(ACTIVITY_NAME,"In function : OnCreates()") ;
 
     }

@@ -63,4 +63,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/chats" />
+    <Button
+        android:id="@+id/weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weahter Tab" />
 </LinearLayout>

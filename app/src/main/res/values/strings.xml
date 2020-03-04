@@ -10,7 +10,7 @@
     <string name="email">Enter your Email Address</string>
     <string name="here">Type your Email</string>
     <string name="pass">Type your password</string>
-    <string name = "chats">Go to Chat</string>
-    <string name ="send">send</string>
-    <string name ="receive">receive</string>
+    <string name="chats">Go to Chat</string>
+    <string name="send">send</string>
+    <string name="receive">receive</string>
 </resources>
