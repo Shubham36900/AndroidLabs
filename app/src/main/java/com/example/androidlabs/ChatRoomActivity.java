@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,18 +25,60 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ChatRoomActivity extends AppCompatActivity {
-    private ArrayList<Message> message = new ArrayList<Message>();
+    public static ArrayList<Message> message = new ArrayList<Message>();
+    public static final String ITEM_SELECTED = "item";
+    public static final String ITEM_POSITION = "";
+    public static final String ID = "id";
+    public static final String TYPE = "TYPE";
+
+
     private MyChat myAdapter;
     SQLiteDatabase db;
     private static String send;
     Button ss;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_chat_room);
-        loadDataFromDatabase();
         ListView ls = findViewById(R.id.theListView);
+
+
+        message.clear();
+        loadDataFromDatabase();
+
+        boolean isTablet = findViewById(R.id.fragmentLocation) != null;
+
+
+        ls.setOnItemClickListener((list, view, position, id) -> {
+            Bundle dataToPass = new Bundle();
+            dataToPass.putString(ITEM_SELECTED, message.get(position).getMessage());
+            dataToPass.putString(TYPE, message.get(position).getType());
+            dataToPass.putInt(ITEM_POSITION, position);
+            dataToPass.putLong(ID, id);
+
+            if (isTablet) {
+                DetailsFragment dFragment = new DetailsFragment(); //add a DetailFragment
+                dFragment.setArguments(dataToPass);
+                dFragment.setTablet(true);//pass it a bundle for information
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentLocation, dFragment) //Add the fragment in FrameLayout
+                        .commit(); //actually load the fragment.
+            } else //isPhone
+            {
+                Intent nextActivity = new Intent(ChatRoomActivity.this, Empty.class);
+                nextActivity.putExtras(dataToPass); //send data to next activity
+                startActivity(nextActivity); //make the transition
+
+
+            }
+        });
+
+        /*loadDataFromDatabase();*/
+        // ls = findViewById(R.id.theListView);
         ls.setAdapter(myAdapter = new MyChat());
 
         EditText edit = findViewById(R.id.ed);
@@ -95,16 +138,19 @@ public class ChatRoomActivity extends AppCompatActivity {
             alertDialogBuilder.setTitle("You clicked on item #" + c)
                     .setView(contact_view)
                     .setMessage("Do you want to delete it")
-                    .setPositiveButton("Yes", (click, arg) -> {
+                    /*.setPositiveButton("Delete from databasse", (click, arg) -> {
 
                         message.remove(c);
                         myAdapter.notifyDataSetChanged();
-                    })
-                    .setNegativeButton("Delete", (click, s) -> {
+                    })*/
+                    .setPositiveButton("Delete", (click, s) -> {
 
                         deleteContact(selectedContact); //remove the contact from database
                         message.remove(c); //remove the contact from contact list
                         myAdapter.notifyDataSetChanged(); //there is one less item so update the list
+                    })
+                    .setNegativeButton("Cancel", (click, s) -> {
+
                     })
                     .create().show();
             return true;

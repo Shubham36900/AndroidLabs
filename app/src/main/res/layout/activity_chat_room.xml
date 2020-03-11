@@ -1,52 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
     tools:context=".ChatRoomActivity">
+
     <ListView
         android:id="@+id/theListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/send"
-        android:gravity="left"/>
+        android:layout_above="@id/rr"
+        android:layout_alignParentTop="true" />
 
     <RelativeLayout
         android:id="@+id/rr"
         android:layout_width="wrap_content"
-
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
         <Button
             android:id="@+id/send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:text="@string/send" />
 
         <EditText
             android:id="@+id/ed"
-            android:layout_width="185dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="0dp"
             android:layout_toEndOf="@+id/send"
+            android:layout_toStartOf="@+id/re"
             android:hint="Type here" />
 
         <Button
             android:id="@+id/re"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/ed"
+            android:layout_alignParentEnd="true"
             android:text="@string/receive" />
     </RelativeLayout>
-
-
 
 </RelativeLayout>
 
