@@ -48,6 +48,12 @@ public class ProfileActivity extends AppCompatActivity {
             Intent lab6 = new Intent(ProfileActivity.this, WeatherForecast.class);
             startActivity (lab6);
         });
+
+        Button tools = findViewById(R.id.tool);
+        tools.setOnClickListener(clik ->{
+            Intent lab8 = new Intent (ProfileActivity.this, Toolbar.class);
+            startActivityForResult(lab8,400);
+        });
         Log.e(ACTIVITY_NAME,"In function : OnCreates()") ;
 
     }

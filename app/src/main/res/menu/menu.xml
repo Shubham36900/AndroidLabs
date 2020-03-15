@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/item1"
+        android:title="Facebook"
+        android:icon="@drawable/fb"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>  <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+    <item android:id="@+id/item2"
+        android:icon="@drawable/eiffeltoweicon"
+        android:title="Look at tower"
+        app:showAsAction="never"
+        android:orderInCategory="400"/> <!-- This uses showAsAction=never, so look at title= parameter -->
+
+    <item android:id="@+id/sport"
+        android:icon="@drawable/sporticon"
+        android:orderInCategory="75"
+        app:showAsAction="always"
+        android:title="SportIcon"/>
+
+    <item android:id="@+id/tiger"
+        android:icon="@drawable/tiger"
+        android:orderInCategory="75"
+        app:showAsAction="always"
+        android:title="SportIcon"/>
+
+</menu>
