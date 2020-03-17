@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/chatv"
+        android:title="Chat"
+        />
+    <item android:id="@+id/Weatherd"
+        android:title="Go to the Weather"
+        />
+    <item android:id="@+id/backs"
+        android:title="Back to the login"
+        />
+</menu>

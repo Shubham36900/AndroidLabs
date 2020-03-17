@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,7 +18,7 @@ public class Toolbar extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toolbar);
+        setContentView(R.layout.navigation);
         //This gets the toolbar from the layout:
         androidx.appcompat.widget.Toolbar tBar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.toolbar);
 
@@ -66,25 +67,26 @@ public class Toolbar extends AppCompatActivity implements NavigationView.OnNavig
     }
     public boolean onNavigationItemSelected( MenuItem item) {
 
-        String message = null;
+        switch(item.getItemId()){
+            case R.id.chatv:
+                Intent it = new Intent(this,ChatRoomActivity.class);
+                startActivity(it);
+                break;
+            case R.id.Weatherd:
+                Intent its = new Intent(this,WeatherForecast.class);
+                startActivity(its);
+                break;
+            case R.id.backs:
+                Intent ss = new Intent(this,ProfileActivity.class);
+                setResult(500,ss);
+               finish();
+                break;
 
-      /*  switch(item.getItemId())
-        {
-            case R.id.item1:
-                message = "You clicked item 1";
-                break;
-            case R.id.search_item:
-                message = "You clicked on the search";
-                break;
-            case R.id.help_item:
-                message = "You clicked on help";
-                break;
-            case R.id.mail:
-                message = "You clicked on mail";
-                break;
-        }*/
 
-        Toast.makeText(this, "NavigationDrawer: " + message, Toast.LENGTH_LONG).show();
+        }
+
+
+
         return false;
     }
 }

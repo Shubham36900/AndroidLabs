@@ -50,10 +50,13 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         Button tools = findViewById(R.id.tool);
+        Intent lab8 = new Intent (ProfileActivity.this, Toolbar.class);
         tools.setOnClickListener(clik ->{
-            Intent lab8 = new Intent (ProfileActivity.this, Toolbar.class);
+
             startActivityForResult(lab8,400);
         });
+
+
         Log.e(ACTIVITY_NAME,"In function : OnCreates()") ;
 
     }
@@ -71,6 +74,9 @@ public class ProfileActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             mImageButton.setImageBitmap(imageBitmap);
+        }
+        if(resultCode == 500){
+       finish();
         }
     }
 
