@@ -60,13 +60,6 @@ public class ProfileActivity extends AppCompatActivity {
         Log.e(ACTIVITY_NAME,"In function : OnCreates()") ;
 
     }
-
-
-
-
-
-
-
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
